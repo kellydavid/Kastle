@@ -50,9 +50,13 @@ lazy val examples = (project in file("examples"))
     name := "examples",
     addCompilerPlugin(kindProjector),
     scalastyleFailOnWarning := true,
+    resolvers += "Confluent Packages" at "https://packages.confluent.io/maven/",
     libraryDependencies ++= Seq(
       slf4jApi,
-      "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
+      "com.typesafe.scala-logging" %% "scala-logging"            % "3.9.2",
+      "com.sksamuel.avro4s"        %% "avro4s-core"              % "4.0.4",
+      "io.confluent"                % "kafka-avro-serializer"    % "6.0.1",
+      "io.confluent"                % "kafka-streams-avro-serde" % "6.0.1"
     ) ++ logbackRelated
   )
   .dependsOn(kastle)
