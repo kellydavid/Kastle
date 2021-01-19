@@ -44,6 +44,19 @@ lazy val kastle = (project in file("."))
       ++ Seq(embeddedKafka).map(_ % IntegrationTest)
   )
 
+lazy val examples = (project in file("examples"))
+  .settings(doNotPublishArtifact)
+  .settings(
+    name := "examples",
+    addCompilerPlugin(kindProjector),
+    scalastyleFailOnWarning := true,
+    libraryDependencies ++= Seq(
+      slf4jApi,
+      "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
+    ) ++ logbackRelated
+  )
+  .dependsOn(kastle)
+
 lazy val publishSettings = Seq(
   publishTo := sonatypePublishToBundle.value,
   publishMavenStyle := true,
