@@ -136,7 +136,7 @@ object GeneralKafkaHelpers {
   )(task: TopicDefinitionDetails => F[T]): F[T] =
     withTopics(Set(topic))(topics => task(topics.head)) //TODO !!!
 
-  def ensureTopicsExist[F[_]: Async: ContextShift](
+  def ensureTopicsExist[F[_]: Async](
       kafkaAdminIO: KafkaAdminIO[F],
       topicDefinitions: Set[TopicDefinitionDetails]
   ): F[Either[String, Unit]] = {

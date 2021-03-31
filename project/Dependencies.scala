@@ -2,8 +2,8 @@ import sbt._
 
 object Dependencies {
 
-  lazy val catsVersion       = "2.3.1"
-  lazy val catsEffectVersion = "2.3.1"
+  lazy val catsVersion       = "2.5.0"
+  lazy val catsEffectVersion = "2.4.1"
   lazy val kafkaVersion      = "2.7.0"
 
   lazy val slf4jApi = "org.slf4j" % "slf4j-api" % "1.7.30" exclude ("org.slf4j", "slf4j-log4j12")
@@ -22,8 +22,8 @@ object Dependencies {
 
   lazy val simulacrum = "org.typelevel" %% "simulacrum" % "1.0.1"
 
-  lazy val scalaTest   = "org.scalatest" %% "scalatest"    % "3.2.3"
-  lazy val mockitoCore = "org.mockito"    % "mockito-core" % "3.7.7"
+  lazy val scalaTest   = "org.scalatest" %% "scalatest"    % "3.2.6"
+  lazy val mockitoCore = "org.mockito"    % "mockito-core" % "3.8.0"
 
   private val logbackVersion = "1.2.3"
   lazy val logbackClass      = "ch.qos.logback" % "logback-core"    % logbackVersion
